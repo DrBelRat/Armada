@@ -1,0 +1,10 @@
+command: start-notebook.sh --NotebookApp.token='' --NotebookApp.notebook_dir=/work
+services:
+  jupyter:
+    image: jupyter/base-notebook
+    user: "1000:1000"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/work
+    command: start-notebook.sh --NotebookApp.token=''
